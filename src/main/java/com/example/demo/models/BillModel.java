@@ -35,7 +35,7 @@ public class BillModel implements Serializable {
     @JoinColumn(name = "client_id", referencedColumnName = "id")
     @ManyToOne(optional = false)
     private ClientModel clientId;
-    
+
     public BillModel() {
     }
 
@@ -51,6 +51,7 @@ public class BillModel implements Serializable {
         this.checkoutId = checkoutId;
         this.clientId = clientId;
     }
+
 
     public Long getId() {
         return this.id;

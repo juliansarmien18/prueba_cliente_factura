@@ -1,6 +1,7 @@
 package com.example.demo.models;
 
 import java.io.Serializable;
+import java.util.Collection;
 
 import javax.persistence.*;
 
@@ -26,6 +27,9 @@ public class ProductModel implements Serializable {
     @JoinColumn(name = "status_id", referencedColumnName = "id")
     @ManyToOne(optional = false)
     private StatusModel statusId;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "productId")
+    private Collection<ProductBillModel> productBillCollection;
     
     public ProductModel() {
     }
@@ -35,13 +39,13 @@ public class ProductModel implements Serializable {
     }
 
 
-    public ProductModel(Integer id, String name, float unityPrice, StatusModel statusId) {
+    public ProductModel(Integer id, String name, float unityPrice, StatusModel statusId, Collection<ProductBillModel> productBillCollection) {
         this.id = id;
         this.name = name;
         this.unityPrice = unityPrice;
         this.statusId = statusId;
+        this.productBillCollection = productBillCollection;
     }
-
 
 
     public Integer getId() {
@@ -75,5 +79,15 @@ public class ProductModel implements Serializable {
     public void setStatusId(StatusModel statusId) {
         this.statusId = statusId;
     }
+
+    public Collection<ProductBillModel> getProductBillCollection() {
+        return productBillCollection;
+    }
+
+    public void setProductBillCollection(Collection<ProductBillModel> productBillCollection) {
+        this.productBillCollection = productBillCollection;
+    }
+
+    
 
 }

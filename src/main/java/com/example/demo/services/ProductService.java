@@ -19,7 +19,7 @@ public class ProductService {
     }
 
     public ProductModel saveProduct(ProductModel product){
-        return productRepository.save(product = new ProductModel(product.getId(), product.getName(), product.getUnityPrice(), product.getStatusId()));
+        return productRepository.save(product = new ProductModel(product.getId(), product.getName(), product.getUnityPrice(), product.getStatusId(),product.getProductBillCollection()));
     }
 
     public Optional<ProductModel>getById(Integer id){

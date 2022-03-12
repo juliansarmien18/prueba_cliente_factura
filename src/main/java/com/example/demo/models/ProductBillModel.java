@@ -14,12 +14,9 @@ public class ProductBillModel implements Serializable {
     @Column(name = "id",nullable = false)
     private Integer id;
 
-    @JoinColumn(name = "bill_id", referencedColumnName = "id")
-    @ManyToOne(optional = false)
+    
     private BillModel billId;
 
-    @JoinColumn(name = "product_id", referencedColumnName = "id")
-    @ManyToOne(optional = false)
     private ProductModel productId;
     
     public ProductBillModel() {

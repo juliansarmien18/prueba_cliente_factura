@@ -27,8 +27,6 @@ public class StatusModel implements Serializable {
         this.id = id;
     }
 
-
-
     public StatusModel(Integer id, String name) {
         this.id = id;
         this.name = name;
