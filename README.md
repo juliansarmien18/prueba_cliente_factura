@@ -18,8 +18,11 @@ En el paquete controllers se encuentran los puntos de entrada de la aplicación 
 aunque el software fue construido bajo la filosofía database first, se configuro el application properties para que se generen las tablas a partir de la compilación del código, también cabe resaltar que se debe configurar la conexión a la base de datos así:
 
 spring.datasource.url=jdbc:mysql://localhost/nombre_de_la_bd
+
 spring.datasource.username=usuario
+
 spring.datasource.password=contrasenia
+
 spring.jpa.hibernate.ddl-auto=update
 
 se debe crear una base de datos vacías y realizar la conexión en este apartado para que al compilar la aplicación se mapeen las tablas correctamente
