@@ -14,16 +14,39 @@ public class ProductBillModel implements Serializable {
     @Column(name = "id",nullable = false)
     private Integer id;
 
-    
+    @Basic(optional = false)
+    @Column(name = "quantity",nullable = false)
+    private Integer quantity;
+
+
     private BillModel billId;
 
     private ProductModel productId;
+
+
     
     public ProductBillModel() {
     }
 
     public ProductBillModel(Integer id) {
         this.id = id;
+    }
+
+
+    public ProductBillModel(Integer id, Integer quantity, BillModel billId, ProductModel productId) {
+        this.id = id;
+        this.quantity = quantity;
+        this.billId = billId;
+        this.productId = productId;
+    }
+
+
+    public Integer getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
     }
 
     public Integer getId() {

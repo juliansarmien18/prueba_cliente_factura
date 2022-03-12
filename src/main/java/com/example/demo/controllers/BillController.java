@@ -39,10 +39,10 @@ public class BillController {
     public String DeleteById(@PathVariable Long id){
         boolean is_deleted = this.billService.deleteBill(id);
         if (is_deleted){
-            return "{Bille borrado}";
+            return "{factura borrada}";
         }
         else{
-            return "{error al borrar al Bille}";
+            return "{error al borrar factura}";
         }
     }
 }

@@ -1,9 +1,11 @@
 package com.example.demo.models;
 
 import java.io.Serializable;
-import java.util.Collection;
+import java.util.List;
 
 import javax.persistence.*;
+
+
 
 
 @Entity
@@ -21,8 +23,12 @@ public class BillModel implements Serializable {
     @Column(name = "products_quantity",nullable = false)
     private long productsQuantity;
 
+    @Basic(optional = false)
+    @Column(name = "total_price",nullable = false)
+    private float totalPrice;
+
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "billId")
-    private Collection<ProductBillModel> productBillCollection;
+    private List<ProductBillModel> productBillList;
     
     @JoinColumn(name = "cashier_id", referencedColumnName = "id")
     @ManyToOne(optional = false)
@@ -43,14 +49,17 @@ public class BillModel implements Serializable {
         this.id = id;
     }
 
-    public BillModel(Long id, long productsQuantity, Collection<ProductBillModel> productBillCollection, CashierModel cashierId, CheckoutModel checkoutId, ClientModel clientId) {
+
+    public BillModel(Long id, long productsQuantity, float totalPrice, List<ProductBillModel> productBillList, CashierModel cashierId, CheckoutModel checkoutId, ClientModel clientId) {
         this.id = id;
         this.productsQuantity = productsQuantity;
-        this.productBillCollection = productBillCollection;
+        this.totalPrice = totalPrice;
+        this.productBillList = productBillList;
         this.cashierId = cashierId;
         this.checkoutId = checkoutId;
         this.clientId = clientId;
     }
+    
 
 
     public Long getId() {
@@ -69,12 +78,21 @@ public class BillModel implements Serializable {
         this.productsQuantity = productsQuantity;
     }
 
-    public Collection<ProductBillModel> getProductBillCollection() {
-        return this.productBillCollection;
+
+    public float getTotalPrice() {
+        return totalPrice;
     }
 
-    public void setProductBillCollection(Collection<ProductBillModel> productBillCollection) {
-        this.productBillCollection = productBillCollection;
+    public void setTotalPrice(float totalPrice) {
+        this.totalPrice = totalPrice;
+    }
+
+    public List<ProductBillModel> getproductBillList() {
+        return this.productBillList;
+    }
+
+    public void setproductBillList(List<ProductBillModel> productBillList) {
+        this.productBillList = productBillList;
     }
 
     public CashierModel getCashierId() {
@@ -100,6 +118,7 @@ public class BillModel implements Serializable {
     public void setClientId(ClientModel clientId) {
         this.clientId = clientId;
     }
+
 
 
     
