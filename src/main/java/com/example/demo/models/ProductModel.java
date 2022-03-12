@@ -27,6 +27,12 @@ public class ProductModel implements Serializable {
     @ManyToOne(optional = false)
     private StatusModel statusId;
     
+    public ProductModel() {
+    }
+
+    public ProductModel(Integer id) {
+        this.id = id;
+    }
 
 
     public ProductModel(Integer id, String name, float unityPrice, StatusModel statusId) {

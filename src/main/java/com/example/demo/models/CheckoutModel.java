@@ -15,7 +15,8 @@ public class CheckoutModel implements Serializable {
     @Column(name = "id")
     private Integer id;
     
-
+    public CheckoutModel() {
+    }
 
     public CheckoutModel(Integer id) {
         this.id = id;

@@ -36,6 +36,12 @@ public class BillModel implements Serializable {
     @ManyToOne(optional = false)
     private ClientModel clientId;
     
+    public BillModel() {
+    }
+
+    public BillModel(Long id) {
+        this.id = id;
+    }
 
     public BillModel(Long id, long productsQuantity, Collection<ProductBillModel> productBillCollection, CashierModel cashierId, CheckoutModel checkoutId, ClientModel clientId) {
         this.id = id;

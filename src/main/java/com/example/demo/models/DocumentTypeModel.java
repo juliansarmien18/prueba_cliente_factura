@@ -24,6 +24,13 @@ public class DocumentTypeModel implements Serializable {
     private String abbreviation;
     
 
+    public DocumentTypeModel() {
+    }
+
+    public DocumentTypeModel(Integer id) {
+        this.id = id;
+    }
+
 
     public DocumentTypeModel(Integer id, String name, String abbreviation) {
         this.id = id;

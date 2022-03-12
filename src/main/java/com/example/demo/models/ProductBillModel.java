@@ -22,14 +22,12 @@ public class ProductBillModel implements Serializable {
     @ManyToOne(optional = false)
     private ProductModel productId;
     
-
-
-    public ProductBillModel(Integer id, BillModel billId, ProductModel productId) {
-        this.id = id;
-        this.billId = billId;
-        this.productId = productId;
+    public ProductBillModel() {
     }
 
+    public ProductBillModel(Integer id) {
+        this.id = id;
+    }
 
     public Integer getId() {
         return this.id;

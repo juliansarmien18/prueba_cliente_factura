@@ -24,6 +24,13 @@ public class CashierModel implements Serializable {
     private String firstLastname;
 
 
+    public CashierModel() {
+    }
+
+    public CashierModel(Integer id) {
+        this.id = id;
+    }
+
     public CashierModel(Integer id, String firstName, String firstLastname) {
         this.id = id;
         this.firstName = firstName;

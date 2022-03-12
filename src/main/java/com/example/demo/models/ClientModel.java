@@ -40,6 +40,13 @@ public class ClientModel implements Serializable {
     
 
 
+    public ClientModel() {
+    }
+
+    public ClientModel(Integer id) {
+        this.id = id;
+    }
+
     public ClientModel(Integer id, String firstName, String firstLastname, String secondLastname, long documentNumber, String adress, DocumentTypeModel documentTypeId) {
         this.id = id;
         this.firstName = firstName;
